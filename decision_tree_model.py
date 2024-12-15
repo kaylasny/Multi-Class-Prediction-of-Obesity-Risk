@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder  #用于将类别标签转换为数值型标签
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
@@ -17,7 +17,7 @@ categorical_columns = [col for col in categorical_columns if col != 'NObeyesdad'
 # 合并训练集和测试集进行编码
 df_combined = pd.concat([train_df[categorical_columns], test_df[categorical_columns]], axis=0)
 
-# 2. 对类别变量进行编码
+# 2. 对类别变量进行编码，将类别值（例如 "cat", "dog"）转换为整数（如 0, 1, 2）
 label_encoders = {}
 for column in categorical_columns:
     le = LabelEncoder()
