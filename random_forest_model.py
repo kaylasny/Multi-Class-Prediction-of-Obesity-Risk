@@ -38,7 +38,7 @@ X_train = train_df.drop(['id', 'NObeyesdad'], axis=1)
 X_test = test_df.drop(['id'], axis=1)  # 测试集没有NObeyesdad
 
 # 5. 初始化随机森林分类器
-rf_model = RandomForestClassifier(n_estimators=5000, random_state=42)
+rf_model = RandomForestClassifier(n_estimators=1000, random_state=42)
 
 # 6. 训练模型
 rf_model.fit(X_train, y_train)
